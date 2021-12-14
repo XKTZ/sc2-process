@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainContainer" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="xktz.sc2.process.ui.MainController">
+    <children>
+        <Button fx:id="btnChoose" mnemonicParsing="false" onAction="#chooseConfig" prefHeight="40.0" prefWidth="300.0"
+                styleClass="btn, btn-default" text="Choose Configuration">
+            <opaqueInsets>
+                <Insets/>
+            </opaqueInsets>
+        </Button>
+        <TextField fx:id="txtDelay" layoutY="54.0" prefHeight="40.0" prefWidth="300.0" text="0"/>
+        <Button fx:id="btnStart" disable="true" layoutY="108.0" mnemonicParsing="false" onAction="#start"
+                prefHeight="40.0" prefWidth="300.0" text="Start">
+            <styleClass>
+                <String fx:value="btn"/>
+                <String fx:value="btn-primary"/>
+            </styleClass>
+        </Button>
+        <ScrollPane layoutY="159.0" prefHeight="450.0" prefWidth="300.0">
+            <content>
+                <FlowPane fx:id="processPaneContainer" prefHeight="450.0" prefWidth="280.0" orientation="VERTICAL"
+                          vgap="20"/>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

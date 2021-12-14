@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="50.0" prefWidth="280.0" type="javafx.scene.layout.AnchorPane"
+         xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label fx:id="lblContent" layoutX="5.0" layoutY="5.0" prefHeight="40.0" prefWidth="160.0"
+               style="-fx-font-size: 18;" textAlignment="CENTER" wrapText="true">
+            <styleClass>
+                <String fx:value="lbl"/>
+                <String fx:value="lbl-primary"/>
+            </styleClass>
+        </Label>
+        <Label fx:id="lblNumber" layoutX="173.0" layoutY="5.0" prefHeight="40.0" prefWidth="50.0"
+               style="-fx-font-size: 18;" textAlignment="CENTER">
+            <styleClass>
+                <String fx:value="lbl"/>
+                <String fx:value="lbl-info"/>
+            </styleClass>
+        </Label>
+        <Label fx:id="lblTime" layoutX="230.0" layoutY="5.0" prefHeight="40.0" prefWidth="50.0"
+               style="-fx-font-size: 12;" textAlignment="CENTER">
+            <styleClass>
+                <String fx:value="lbl"/>
+                <String fx:value="lbl-info"/>
+            </styleClass>
+        </Label>
+    </children>
+</fx:root>

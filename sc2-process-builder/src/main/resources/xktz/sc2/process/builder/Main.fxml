@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="xktz.sc2.process.builder.MainController">
+    <children>
+        <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="800.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="menuNew" mnemonicParsing="false" onAction="#newProject" text="New"/>
+                        <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#openProject" text="Open"/>
+                        <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#saveProject" text="Save"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ScrollPane layoutX="14.0" layoutY="70.0" prefHeight="500.0" prefWidth="355.0">
+            <content>
+                <TableView fx:id="tblProcess" editable="true" prefHeight="500.0" prefWidth="340.0">
+                    <columns>
+                        <TableColumn prefWidth="40.0" style="-fx-alignment: CENTER;" text="id">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colProcessContent" prefWidth="120.0" text="Content">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="content"/>
+                            </cellValueFactory>
+                            <cellFactory>
+                                <TextFieldTableCell fx:factory="forTableColumn"/>
+                            </cellFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colProcessNumber" prefWidth="60.0" text="Number">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="number"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colProcessTime" prefWidth="60.0" text="Time">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="time"/>
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colProcessAudio" prefWidth="60.0" text="Audio">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="audio"/>
+                            </cellValueFactory>
+                            <cellFactory>
+                                <TextFieldTableCell fx:factory="forTableColumn"/>
+                            </cellFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <ScrollPane layoutX="430.0" layoutY="70.0" prefHeight="500.0" prefWidth="355.0">
+            <content>
+                <TableView fx:id="tblAudio" editable="true" prefHeight="500.0" prefWidth="340.0">
+                    <columns>
+                        <TableColumn prefWidth="170.0" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name"/>
+                            </cellValueFactory>
+                            <cellFactory>
+                                <TextFieldTableCell fx:factory="forTableColumn"/>
+                            </cellFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="170.0" text="Path">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="path"/>
+                            </cellValueFactory>
+                            <cellFactory>
+                                <TextFieldTableCell fx:factory="forTableColumn"/>
+                            </cellFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </content>
+        </ScrollPane>
+        <Button fx:id="btnNewProcess" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#newProcess"
+                text="Add Process">
+            <styleClass>
+                <String fx:value="btn"/>
+                <String fx:value="btn-default"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="btnNewAudio" layoutX="430.0" layoutY="33.0" mnemonicParsing="false" onAction="#newAudio"
+                text="Add Audio">
+            <styleClass>
+                <String fx:value="btn"/>
+                <String fx:value="btn-default"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="btnRemoveProcess" layoutX="130.0" layoutY="33.0" mnemonicParsing="false"
+                onAction="#removeProcess" text="Remove Process">
+            <styleClass>
+                <String fx:value="btn"/>
+                <String fx:value="btn-default"/>
+            </styleClass>
+        </Button>
+        <Button fx:id="btnRefresh" layoutX="263.0" layoutY="33.0" mnemonicParsing="false" onAction="#refresh"
+                prefHeight="23.0" prefWidth="101.0" styleClass="btn, btn-default" text="Refresh"/>
+    </children>
+</AnchorPane>

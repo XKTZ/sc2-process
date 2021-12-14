@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="100.0" prefWidth="500.0" type="javafx.scene.layout.AnchorPane"
+         xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Button fx:id="btnStart" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#startRecord"
+                prefHeight="75.0" prefWidth="470.0" style="-fx-font-size: 24;" styleClass="btn, btn-primary"
+                text="Start"/>
+    </children>
+</fx:root>
