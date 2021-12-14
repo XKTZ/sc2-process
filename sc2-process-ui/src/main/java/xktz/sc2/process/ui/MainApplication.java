@@ -22,5 +22,7 @@ public class MainApplication extends Application {
         primaryStage.setTitle("My SC2 Process Helper");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        primaryStage.setOnCloseRequest((e) -> System.exit(0));
     }
 }
