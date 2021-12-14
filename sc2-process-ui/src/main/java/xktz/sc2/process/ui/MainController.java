@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import org.apache.commons.lang.StringUtils;
@@ -48,7 +50,7 @@ public class MainController {
 
     private Map<ProcessNode, ProcessPane> processPaneMap;
 
-    private Map<String, AudioProvider> audioMap;
+    private Map<String, MediaPlayer> audioMap;
 
     private Timer removeTimer;
 
@@ -145,7 +147,7 @@ public class MainController {
         audioMap = new HashMap<>() {{
             var audioPathMap = config.getAudioMap();
             for (var entry : audioPathMap.entrySet()) {
-                put(entry.getKey(), AudioProvider.of(entry.getValue()));
+                put(entry.getKey(), new MediaPlayer(new Media(entry.getValue().toUri().toString())));
             }
         }};
 
@@ -156,8 +158,9 @@ public class MainController {
 
     public void playAudio(String audio) {
         new Thread(() -> {
-            System.out.println(audio);
-            audioMap.get(audio).acquire().play();
+            var player = audioMap.get(audio);
+            player.seek(player.getStartTime());
+            player.play();
         }).start();
     }
 }

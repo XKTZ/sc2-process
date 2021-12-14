@@ -30,7 +30,7 @@ public abstract class ParallelProcess implements Process, ExceptionHandleable {
             handle(e);
             return;
         }
-        Timer timer = new Timer();
+        Timer timer = new Timer(false);
         // tasks
         List<ProcessNodeTimerTask> tasks = process.stream().map(
                 node -> new ProcessNodeTimerTask(node, getEmitter(node))
