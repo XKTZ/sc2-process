@@ -10,7 +10,6 @@
     <modules>
         <module>../sc2-process-core</module>
         <module>../sc2-process-ui</module>
-        <module>../sc2-process-ui</module>
         <module>../sc2-process-builder</module>
     </modules>
     <packaging>pom</packaging>
